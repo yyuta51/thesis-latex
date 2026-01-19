@@ -16,6 +16,8 @@ jobs:
         with:
           # ファイル名が正確であることを確認してください
           root_file: 2025houteimain.tex
+          # 以前の .latexmkrc を使って日本語(uplatex)でビルドするよう強制します
+          args: "-pdfdvi -latexmk -use-make"
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
