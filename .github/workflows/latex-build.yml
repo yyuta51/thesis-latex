@@ -14,14 +14,14 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          # あなたのファイル名に正確に合わせます
           root_file: 2025houteimain.tex
-          latexmk_use_lualatex: true
+          # LuaLaTeXをオフにし、日本語pLaTeX用のエンジン(latexmk)を使用します
+          latexmk_use_lualatex: false
+          # コンパイルのオプションを指定します
+          args: "-pdfdvi -interaction=nonstopmode"
 
       - name: Upload PDF
-        # ここを actions/upload-artifact@v4 に修正しました
         uses: actions/upload-artifact@v4
         with:
           name: thesis-pdf
-          # 作成されるPDFの名前もファイル名に合わせます
           path: 2025houteimain.pdf
