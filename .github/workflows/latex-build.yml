@@ -15,10 +15,8 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: 2025houteimain.tex
-          # 日本語(uplatex)を扱うための設定です
-          args: "-pdfdvi -latexmk -use-make"
-          # latexmkrcがなくてもuplatexを強制する設定
-          extra_system_packages: "texlive-lang-japanese texlive-luatex"
+          # 日本語(uplatex)でPDFを作成するための標準的な設定です
+          args: "-pdfdvi -latexmk"
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
