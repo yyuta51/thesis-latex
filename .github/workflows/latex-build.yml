@@ -1,0 +1,26 @@
+name: LaTeX Build
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          # メインのファイルを指定します
+          root_file: 2025houteimain.tex
+          # 日本語環境（LuaLaTeXを想定）でビルドする場合の設定です
+          latexmk_use_lualatex: true
+
+      - name: Upload PDF
+        uses: upload-artifact@v4
+        with:
+          name: thesis-pdf
+          path: 2025houteimain.pdf
