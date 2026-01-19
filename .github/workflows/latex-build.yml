@@ -15,10 +15,10 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: 2025houteimain.tex
-          # LuaLaTeXをオフにし、日本語pLaTeX用のエンジン(latexmk)を使用します
-          latexmk_use_lualatex: false
-          # コンパイルのオプションを指定します
-          args: "-pdfdvi -interaction=nonstopmode"
+          # 日本語(uplatex)を扱うための設定です
+          args: "-pdfdvi -latexmk -use-make"
+          # latexmkrcがなくてもuplatexを強制する設定
+          extra_system_packages: "texlive-lang-japanese texlive-luatex"
 
       - name: Upload PDF
         uses: actions/upload-artifact@v4
