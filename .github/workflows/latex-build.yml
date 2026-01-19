@@ -14,13 +14,13 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v3
         with:
-          # ファイル名を正確に指定します
+          # ファイル名を正確に指定
           root_file: 2025houteimain.tex
-          # 日本語(uplatex)を正しく処理するための魔法の言葉です
+          # 日本語(uplatex)を正しく処理するための魔法の引数です
           args: "-pdfdvi"
 
       - name: Upload PDF
-        # エラーが出ていた actions/ の付け忘れを修正済み
+        # actions/ を忘れずに付与してエラーを解消
         uses: actions/upload-artifact@v4
         with:
           name: thesis-pdf
