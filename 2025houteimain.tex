@@ -1,0 +1,302 @@
+%=====================================
+%    この tex ファイルは2025年度立命館大学数学研究会機関紙
+%    『方程』の記事作成テンプレートです. 
+%=====================================
+
+% -----------------------
+% preamble
+% -----------------------
+% ここから本文 (\begin{document}) までの
+% ソースコードに変更を加えた場合は
+% 編集者まで連絡してください. 
+% Don't change preamble code yourself. 
+% If you add something
+% (usepackage, newtheorem, newcommand, renewcommand),
+% please tell it 
+% to the editor of institutional paper of RUMS.
+
+% ------------------------
+% documentclass
+% ------------------------
+\documentclass[11pt, a4paper, dvipdfmx]{jsarticle}
+
+% ------------------------
+% usepackage
+% ------------------------
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[psamsfonts]{amssymb}
+\usepackage{color}
+\usepackage{ascmac}
+\usepackage{pifont}
+\usepackage{amsfonts}
+\usepackage{layout}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{mathtools}
+\usepackage{proof}
+\usepackage{listings}
+\usepackage{otf}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
+\usepackage[all]{xy}
+\usepackage{amscd}
+%\usepackage{txfonts}
+\usepackage[stable]{footmisc}
+\usepackage{url}
+
+% additional packages
+\usepackage{bxtexlogo}
+\usepackage{wrapfig}
+
+\usepackage{enumerate}
+\usepackage{bm}
+
+\usetikzlibrary{cd}
+
+
+
+% ================================
+% パッケージを追加する場合のスペース 
+
+%=================================
+
+
+% --------------------------
+% theoremstyle
+% --------------------------
+\theoremstyle{definition}
+
+% --------------------------
+% newtheoem
+% --------------------------
+
+% 日本語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+% If you want to use theorem environment in Japanece, 
+% you can use these code. 
+% Attention!
+% All theorem enivironment numbers depend on 
+% only section numbers.
+\newtheorem{myAxiom}{公理}[section]
+\newtheorem{Definition}[myAxiom]{定義}
+\newtheorem{Theorem}[myAxiom]{定理}
+\newtheorem{Proposition}[myAxiom]{命題}
+\newtheorem{Lemma}[myAxiom]{補題}
+\newtheorem{Corollary}[myAxiom]{系}
+\newtheorem{Example}[myAxiom]{例}
+\newtheorem{Claim}[myAxiom]{主張}
+\newtheorem{Property}[myAxiom]{性質}
+\newtheorem{Attention}[myAxiom]{注意}
+\newtheorem{Question}[myAxiom]{問}
+\newtheorem{Problem}[myAxiom]{問題}
+\newtheorem{Consideration}[myAxiom]{考察}
+\newtheorem{Alert}[myAxiom]{警告}
+\newtheorem{Fact}[myAxiom]{事実}
+
+
+% 日本語で定理, 命題, 証明などを番号なしで用いるためのコマンドです. 
+% If you want to use theorem environment with no number in Japanese, You can use these code.
+\newtheorem*{myAxiom*}{公理}
+\newtheorem*{Definition*}{定義}
+\newtheorem*{Theorem*}{定理}
+\newtheorem*{Proposition*}{命題}
+\newtheorem*{Lemma*}{補題}
+\newtheorem*{Example*}{例}
+\newtheorem*{Corollary*}{系}
+\newtheorem*{Claim*}{主張}
+\newtheorem*{Property*}{性質}
+\newtheorem*{Attention*}{注意}
+\newtheorem*{Question*}{問}
+\newtheorem*{Problem*}{問題}
+\newtheorem*{Consideration*}{考察}
+\newtheorem*{Alert*}{警告}
+\newtheorem{Fact*}{事実}
+
+
+% 英語で定理, 命題, 証明などを番号付きで用いるためのコマンドです. 
+%　If you want to use theorem environment in English, You can use these code.
+%all theorem enivironment number depend on only section number.
+\newtheorem{myAxiom+}{myAxiom}[section]
+\newtheorem{Definition+}[myAxiom+]{Definition}
+\newtheorem{Theorem+}[myAxiom+]{Theorem}
+\newtheorem{Proposition+}[myAxiom+]{Proposition}
+\newtheorem{Lemma+}[myAxiom+]{Lemma}
+\newtheorem{Example+}[myAxiom+]{Example}
+\newtheorem{Corollary+}[myAxiom+]{Corollary}
+\newtheorem{Claim+}[myAxiom+]{Claim}
+\newtheorem{Property+}[myAxiom+]{Property}
+\newtheorem{Attention+}[myAxiom+]{Attention}
+\newtheorem{Question+}[myAxiom+]{Question}
+\newtheorem{Problem+}[myAxiom+]{Problem}
+\newtheorem{Consideration+}[myAxiom+]{Consideration}
+\newtheorem{Alert+}{Alert}
+\newtheorem{Fact+}[myAxiom+]{Fact}
+\newtheorem{Remark+}[myAxiom+]{Remark}
+
+% ----------------------------
+% commmand
+% ----------------------------
+% 執筆に便利なコマンド集です. 
+% コマンドを追加する場合は下のスペースへ. 
+
+% 集合の記号 (黒板文字)
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\KK}{\mathbb{K}}
+
+
+% 集合の記号 (太文字)
+\newcommand{\nn}{\mathbf{N}}
+\newcommand{\zz}{\mathbf{Z}}
+\newcommand{\qq}{\mathbf{Q}}
+\newcommand{\rr}{\mathbf{R}}
+\newcommand{\cc}{\mathbf{C}}
+\newcommand{\pp}{\mathbf{P}}
+\newcommand{\kk}{\mathbf{K}}
+
+% 特殊な写像の記号
+\newcommand{\ev}{\mathop{\mathrm{ev}}\nolimits} % 値写像
+\newcommand{\pr}{\mathop{\mathrm{pr}}\nolimits} % 射影
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits} % 恒等射
+
+% スクリプト体にするコマンド
+%   例えば　{\mcal C} のように用いる
+\newcommand{\mcal}{\mathcal}
+
+% 花文字にするコマンド 
+%   例えば　{\h C} のように用いる
+\newcommand{\h}{\mathscr}
+
+% ヒルベルト空間などの記号
+\newcommand{\F}{\mcal{F}}
+\newcommand{\X}{\mcal{X}}
+\newcommand{\Y}{\mcal{Y}}
+\newcommand{\Hil}{\mcal{H}}
+\newcommand{\RKHS}{\Hil_{k}}
+\newcommand{\Loss}{\mcal{L}_{D}}
+\newcommand{\MLsp}{(\X, \Y, D, \Hil, \Loss)}
+
+% 偏微分作用素の記号
+\newcommand{\p}{\partial}
+
+% 角カッコの記号 (内積は下にマクロがあります)
+\newcommand{\lan}{\langle}
+\newcommand{\ran}{\rangle}
+
+
+
+% 圏の記号など
+\newcommand{\Set}{{\bf Set}}
+\newcommand{\Vect}{{\bf Vect}}
+\newcommand{\FDVect}{{\bf FDVect}}
+\newcommand{\Ring}{{\bf Ring}}
+\newcommand{\Ab}{{\bf Ab}}
+\newcommand{\Mod}{\mathop{\mathrm{Mod}}\nolimits}
+\newcommand{\CGA}{{\bf CGA}}
+\newcommand{\GVect}{{\bf GVect}}
+\newcommand{\Lie}{{\bf Lie}}
+\newcommand{\dLie}{{\bf Liec}}
+
+
+
+% 射の集合など
+\newcommand{\Map}{\mathop{\mathrm{Map}}\nolimits} % 写像の集合
+\newcommand{\Hom}{\mathop{\mathrm{Hom}}\nolimits} % 射集合
+\newcommand{\End}{\mathop{\mathrm{End}}\nolimits} % 自己準同型の集合
+\newcommand{\Aut}{\mathop{\mathrm{Aut}}\nolimits} % 自己同型の集合
+\newcommand{\Mor}{\mathop{\mathrm{Mor}}\nolimits} % 射集合
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits} % 核
+\newcommand{\Img}{\mathop{\mathrm{Im}}\nolimits} % 像
+\newcommand{\Cok}{\mathop{\mathrm{Coker}}\nolimits} % 余核
+\newcommand{\Cim}{\mathop{\mathrm{Coim}}\nolimits} % 余像
+
+% その他便利なコマンド
+\newcommand{\dip}{\displaystyle} % 本文中で数式モード
+\newcommand{\e}{\varepsilon} % イプシロン
+\newcommand{\dl}{\delta} % デルタ
+\newcommand{\pphi}{\varphi} % ファイ
+\newcommand{\ti}{\tilde} % チルダ
+\newcommand{\pal}{\parallel} % 平行
+\newcommand{\op}{{\rm op}} % 双対を取る記号
+\newcommand{\lcm}{\mathop{\mathrm{lcm}}\nolimits} % 最小公倍数の記号
+\newcommand{\Probsp}{(\Omega, \F, \P)} 
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+
+% ================================
+% コマンドを追加する場合のスペース 
+
+% =================================
+
+
+
+
+
+% ---------------------------
+% new definition macro
+% ---------------------------
+% 便利なマクロ集です
+
+% 内積のマクロ
+%   例えば \inner<\pphi | \psi> のように用いる
+\def\inner<#1>{\langle #1 \rangle}
+
+% ================================
+% マクロを追加する場合のスペース 
+
+%=================================
+
+
+
+
+% ----------------------------
+% documenet 
+% ----------------------------
+% 以下, 本文の執筆スペースです. 
+% Your main code must be written between 
+% begin document and end document.
+% ---------------------------
+
+\title{現象の記述から構造の幾何へ}
+\author{山本 雄太}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+ 本稿では特に, シンプレクティック幾何学, コンタクト幾何学, そして情報幾何学に焦点を当てた. 
+\end{abstract}
+\section*{Introduction}
+物理学の歴史的な出発点は古典力学である. 古典力学は3つの要請(数学でいう公理に対応するもの)によって体系が作られており, そのうちの1つである運動方程式は力の定義式と解釈する見方もある\footnote{古典力学は粒子と力の二元論であり, これらについては言及しない. 古典力学という枠組みにインプットして得られる情報は粒子の軌道(時間発展)もしくは, 力の関数形である. }. よって, ``力"そのものが物体にどのようにして作用しているのか, 古典力学の理論がその仕組みを明らかにすることはない. この意味で場の理論は, 相互作用を直接扱うことができており, 物体に力が働く仕組みを一部ではあれ, 明らかにすることができた. 
+\par
+ゲージ理論とは, もともとEinsteinによって作られた一般相対性理論の, 電磁気学を含む拡張としてH.Weylによって考えられたものが原型(prototype)である. ゲージ(gauge)とは物差しという意味であり, 物理現象は観測者に依らないという根源的な指導原理から, ゲージ原理というものを理論の出発点とすれば, ある種「相互作用を導出」することができる. 今や, 重力以外の3つの基本的な相互作用を記述する理論として, 現代物理学の中心に位置する. 
+\par
+一方で, 数学の方にもゲージ理論と呼ばれる分野が存在する. 
+
+\begin{Problem}
+  ゲージ自由度のある系をどのように扱うか. 
+\end{Problem}
+\begin{Claim}
+  てすてす
+\end{Claim}
+%===============================================
+% 参考文献スペース
+%===============================================
+\begin{thebibliography}{20} 
+    \bibitem{ひ1} 筆者, 『本の名前』, 出版社, 出版年.
+    \bibitem{AB1} A.\ Author, B.\ Buthor, \textit{Title of The Book}, Publisher, 9999.
+\end{thebibliography}
+
+%===============================================
+
+
+\end{document}
